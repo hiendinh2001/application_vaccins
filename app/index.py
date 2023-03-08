@@ -59,5 +59,4 @@ def type_history(file_type):
     return render_template('history.html', dates=dates)
 
 if __name__ == '__main__':
-    from app.admin import *
     app.run(debug=True)

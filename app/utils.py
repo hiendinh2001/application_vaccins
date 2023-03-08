@@ -30,7 +30,7 @@ def get_immunization_by_id(immunization_id):
             return i
 
 def get_observation_by_id(observation_id): 
-    observations = read_json(os.path.join(app.root_path, 'data/temperature.json'))
+    observations = read_json(os.path.join(app.root_path, 'data/observation.json'))
 
     for o in observations:
         if o['identifier'] == observation_id:
