@@ -1,0 +1,29 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="subject">Patients</h1>
+
+        <hr>
+
+
+
+        <hr>
+        <table border="1" class="product">
+            <tr>
+                <th> Product ID </th>
+                <th> Product Name </th>
+                <th> Product Description</th>
+                <th> Product Price </th>
+            </tr>
+            {% for p in patients %}
+            <!-- Bắt đầu vòng lặp -->
+            <tr>
+                <td>{{ p.identifier }}</td>
+                <td>{{ p.name }}</td>
+                <td>{{ p.telecom }}</td>
+            </tr>
+            {% endfor %}         <!-- Kết thúc vòng lặp -->
+        </table>
+    </div>
+{% endblock %}

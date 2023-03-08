@@ -1,0 +1,25 @@
+[{
+    "resourceType" : "Immunization",
+    "identifier" : 1,
+    "status" : "Complete",
+    "vaccineCode" : "560",
+    "patient": "Anna",
+    "occurrenceDateTime" : "08/06/2021"
+  },
+  {
+    "resourceType" : "Immunization",
+    "identifier" : 2,
+    "status" : "Complete",
+    "vaccineCode" : "210",
+    "patient": "Lou",
+    "occurrenceDateTime" : "17/03/2022"
+
+  },
+  {
+    "resourceType" : "Immunization",
+    "identifier" : 3,
+    "status" : "Pas fini",
+    "vaccineCode" : "930",
+    "patient": "Linda",
+    "occurrenceDateTime" : "05/05/2023"
+  }]

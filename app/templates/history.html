@@ -1,0 +1,30 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} History {% endblock %}
+
+{% block content %}
+
+<h1>Historique des modifications</h1>
+
+{% if files %}
+<table>
+  <thead>
+    <tr>
+      <th>Fichier</th>
+      <th>Date de modification</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for file in files %}
+    <tr>
+      <td>{{ file.name }}</td>
+      <td>{{ file.last_modified }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>Aucun fichier trouvé.</p>
+{% endif %}
+
+{% endblock %}

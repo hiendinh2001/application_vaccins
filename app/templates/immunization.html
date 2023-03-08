@@ -1,0 +1,73 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} Liste de l'immunization des patients {% endblock %}
+
+{% block content %}
+<h1 class="subject mt-5 mb-5">Liste de l'immunization des patients</h1>
+
+{% if immunizations %}
+<!-- <form class="row justify-content-center ml-5 mr-5 mb-5">
+  <div class="col-md-3 form-group mr-sm-2">
+    <input type="text" class="form-control" name="keyword" placeholder="Entrez le nom du patient..." />
+  </div>
+  <div class="col-md-3 form-group mr-sm-2">
+    <input type="text" class="form-control" onfocus="(this.type='date')" name="from_date" placeholder="Date de début"/>
+  </div>
+  <div class="col-md-3 form-group mr-sm-2">
+    <input type="text" class="form-control" onfocus="(this.type='date')" name="to_date" placeholder="Date de fin"/>
+  </div>
+    <input type="submit" value="Rechercher" class="my-2 my-sm-0 btn btn-success" size="sm">
+</form> -->
+
+
+<div class="row justify-content-center">
+  <div class="col-md-10 col-xs-12 mb-5">
+    <table class="table table-hover table-bordered">
+      <tr class="bg-light">
+        <th class="text-center">Id</th>
+        <th class="text-center">Nom du patient</th>
+        <th class="text-center">Statut</th>
+        <th class="text-center">Code du vaccin</th>
+        <th class="text-center">Date du vaccin</th>
+      </tr>
+      {% for i in immunizations %}
+      <tr>
+        <td class="text-center">
+          <a class="mt-2 text-decoration-none text-dark"
+            href="{{ url_for('immunization_detail', immunization_id=i.identifier) }}">{{ i.identifier }}</a>
+        </td>
+        <td class="text-center">
+            <a class="mt-2 text-decoration-none text-dark"
+              href="{{ url_for('immunization_detail', immunization_id=i.identifier) }}">{{ i.patient }}</a>
+          </td>
+        <td class="text-center">
+          <a class="mt-2 text-decoration-none text-dark"
+            href="{{ url_for('immunization_detail', immunization_id=i.identifier) }}">{{ i.status }}</a>
+        </td>
+        <td class="text-center" class="my-date">
+          <a class="mt-2 text-decoration-none text-dark"
+            href="{{ url_for('immunization_detail', immunization_id=i.identifier) }}">{{ i.vaccineCode }}</a>
+        </td>
+        <td class="text-center" class="my-date">
+            <a class="mt-2 text-decoration-none text-dark"
+              href="{{ url_for('immunization_detail', immunization_id=i.identifier) }}">{{ i.occurrenceDateTime }}</a>
+          </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  {% else %}
+  <p class="text-center"><i>Aucun résultats retourné!!!</i></p>
+  {% endif %}
+
+  <script>
+    window.onload = function () {
+      let d = document.getElementsByClassName('my-date')
+      for (let i = 0; i < d.length; i++)
+        d[i].innerText = moment(d[i].innerText).locale('fr').fromNow()
+    }
+
+  </script>
+
+  {% endblock %}
