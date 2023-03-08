@@ -5,7 +5,7 @@ def read_json(path):
     with open(path, "r") as f:
         return json.load(f)
 
-def load_patient(name=None, gender=None, from_date=None, to_date=None):
+def load_patient(name=None, gender=None):
     patients = read_json(os.path.join(app.root_path, 'data/patient.json'))
 
     if name:
