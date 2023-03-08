@@ -42,7 +42,7 @@ def immunization_detail(immunization_id):
 def observation_detail(observation_id):
     observation = utils.get_observation_by_id(observation_id)
 
-    return render_template('observation.html',
+    return render_template('observation_detail.html',
                            observation=observation)
 
 @app.route("/fhir/_history")
