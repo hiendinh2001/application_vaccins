@@ -1,6 +1,10 @@
 [
   {
     "resourceType": "Patient",
+    "id": 1,
+    "meta": {
+      "lastUpdated": "2023-03-09T17:20:03+01:00"
+    },
     "identifier": 1,
     "active": true,
     "name": "Anna",
@@ -10,6 +14,10 @@
   },
   {
     "resourceType": "Patient",
+    "id": 1,
+    "meta": {
+      "lastUpdated": "2023-03-09T17:20:03+01:00"
+    },
     "identifier": 2,
     "active": true,
     "name": "Lou",
@@ -20,6 +28,10 @@
   },
   {
     "resourceType": "Patient",
+    "id": 1,
+    "meta": {
+      "lastUpdated": "2023-03-09T17:20:03+01:00"
+    },
     "identifier": 3,
     "active": true,
     "name": "Linda",

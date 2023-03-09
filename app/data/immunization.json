@@ -1,6 +1,10 @@
 [
   {
     "resourceType": "Immunization",
+        "id": 2,
+    "meta": {
+      "lastUpdated": "2023-03-08T17:20:03+01:00"
+    },
     "identifier": 1,
     "status": "Complete",
     "vaccineCode": "560",
@@ -9,6 +13,10 @@
   },
   {
     "resourceType": "Immunization",
+        "id": 2,
+    "meta": {
+      "lastUpdated": "2023-03-08T17:20:03+01:00"
+    },
     "identifier": 2,
     "status": "Complete",
     "vaccineCode": "210",
@@ -17,6 +25,10 @@
   },
   {
     "resourceType": "Immunization",
+        "id": 2,
+    "meta": {
+      "lastUpdated": "2023-03-08T17:20:03+01:00"
+    },
     "identifier": 3,
     "status": "Pas fini",
     "vaccineCode": "930",

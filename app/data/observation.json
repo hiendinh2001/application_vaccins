@@ -1,6 +1,10 @@
 [
   {
     "resourceType": "Observation",
+        "id": 3,
+    "meta": {
+      "lastUpdated": "2023-03-07T17:20:03+01:00"
+    },
     "identifier": 1,
     "status": "Final",
     "subject": {
@@ -17,6 +21,10 @@
   },
   {
     "resourceType": "Observation",
+        "id": 3,
+    "meta": {
+      "lastUpdated": "2023-03-07T17:20:03+01:00"
+    },
     "identifier": 2,
     "status": "Modifie +",
     "subject": {
@@ -33,6 +41,10 @@
   },
   {
     "resourceType": "Observation",
+        "id": 3,
+    "meta": {
+      "lastUpdated": "2023-03-07T17:20:03+01:00"
+    },
     "identifier": 3,
     "status": "Preliminaire",
     "subject": {

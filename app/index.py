@@ -1,6 +1,7 @@
-from flask import render_template, request
+from flask import render_template, request, jsonify
 from app import app
 import utils
+from utils import read_json
 
 @app.route("/fhir")
 def home(): 
@@ -24,13 +25,6 @@ def patient_detail(patient_id):
     return render_template('patient_detail.html',
                            patient=patient)
 
-@app.route("/fhir/Immunization")
-def immunization_list():
-
-    immunizations = utils.load_immunization()
-
-    return render_template('immunization.html', immunizations=immunizations) 
-
 @app.route("/fhir/Immunization/<int:immunization_id>") 
 def immunization_detail(immunization_id):
     immunization = utils.get_immunization_by_id(immunization_id)
@@ -44,19 +38,16 @@ def observation_detail(observation_id):
 
     return render_template('observation_detail.html',
                            observation=observation)
-
-@app.route("/fhir/_history")
+@app.route('/fhir/_history')
 def history():
-    last_updated = request.args.get('lastUpdated')
-    file_type = request.args.get('type')
-    dates = utils.load_history(file_type, last_updated)
-    return render_template('history.html', dates=dates)
+    patients = utils.load_patient()
+    immunizations = utils.load_immunization()
+    observations = utils.load_observation()
 
-
-@app.route("/fhir/<file_type>/_history")
-def type_history(file_type):
-    dates = utils.load_history(file_type=file_type)
-    return render_template('history.html', dates=dates)
+    return render_template('history.html',
+                           patients=patients,
+                           immunizations=immunizations,
+                           observations=observations)
 
 if __name__ == '__main__':
     app.run(debug=True)
