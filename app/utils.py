@@ -25,10 +25,10 @@ def load_observation():
 
     return observations
 
-def load_pratitioner():
-    pratitioners = read_json(os.path.join(app.root_path, 'data/pratitioner.json'))
+def load_practitioner():
+    practitioners = read_json(os.path.join(app.root_path, 'data/practitioner.json'))
 
-    return pratitioners
+    return practitioners
 
 def get_patient_by_id(patient_id):
     patients = read_json(os.path.join(app.root_path, 'data/patient.json'))

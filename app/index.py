@@ -51,11 +51,13 @@ def history():
     patients = utils.load_patient()
     immunizations = utils.load_immunization()
     observations = utils.load_observation()
+    practitioners = utils.load_practitioner()
 
     return render_template('history.html',
                            patients=patients,
                            immunizations=immunizations,
-                           observations=observations)
+                           observations=observations,
+                           practitioners=practitioners)
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
