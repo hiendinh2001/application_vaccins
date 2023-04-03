@@ -38,6 +38,14 @@ def observation_detail(observation_id):
 
     return render_template('observation_detail.html',
                            observation=observation)
+
+@app.route("/fhir/Practitioner/<int:practitioner_id>")
+def practitioner_detail(practitioner_id):
+    practitioner = utils.get_practitioner_by_id(practitioner_id)
+
+    return render_template('practitioner_detail.html',
+                           practitioner=practitioner)
+
 @app.route('/fhir/_history')
 def history():
     patients = utils.load_patient()
@@ -50,4 +58,4 @@ def history():
                            observations=observations)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0")

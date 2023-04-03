@@ -25,6 +25,11 @@ def load_observation():
 
     return observations
 
+def load_pratitioner():
+    pratitioners = read_json(os.path.join(app.root_path, 'data/pratitioner.json'))
+
+    return pratitioners
+
 def get_patient_by_id(patient_id):
     patients = read_json(os.path.join(app.root_path, 'data/patient.json'))
 
@@ -45,3 +50,10 @@ def get_observation_by_id(observation_id):
     for o in observations:
         if o['identifier'] == observation_id:
             return o
+
+def get_practitioner_by_id(practionner_id):
+    practitioners = read_json(os.path.join(app.root_path, 'data/practitioner.json'))
+
+    for pr in practitioners:
+        if pr['identifier'] == practionner_id:
+            return pr
